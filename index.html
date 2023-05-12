@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="img/icon.png" type="image/png" sizes="10x10">
+    <link rel="stylesheet" href="Style/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <title>Encriptador</title>
+
+    </style>
+</head>
+<body>
+    
+    <main>
+
+        <header>
+            <div class="logo">
+                <a href="https://www.aluracursos.com/" target="_blank"><img src="img/Top.png" alt="Logo_Alura"></a>
+            </div>
+
+            <div class="alerta_copy">
+                <div class="alert alert-success">
+                    <i class="bi bi-check2"></i> Copiado
+                </div>
+            </div>
+
+            <div class="ver">
+                <button type="button" class="btn btn-primary" data-bs-toggle="offcanvas" data-bs-target="#demo">
+                    <i class="bi bi-list"></i>
+                </button>
+            </div>
+            <div class="offcanvas offcanvas-end" id="demo">
+                <div class="offcanvas-header">
+                    <h1 class="offcanvas-title h3">Mis Redes</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <a href="https://www.facebook.com/ElZurdoAV" target="_blank" class="btn btn-primary"><i class="bi bi-facebook"></i> Facebook</a><br><br>
+                    <a href="https://www.instagram.com/j_elzurdoav/" class="btn btn-danger" target="_blank"><i class="bi bi-instagram"></i> Instagram</a><br><br>
+                    <a href="https://github.com/VilchisAngel" class="btn btn-secondary" target="_blank"><i class="bi bi-github"></i> Github</a><br><br>
+                    <a href="https://www.linkedin.com/" class="btn btn-info text-light" target="_blank"><i class="bi bi-linkedin"></i> Linkedin</a><br><br>
+                </div>
+            </div>
+
+        </header>
+
+        <section>
+            <div class="Campo_Entrada">
+                <textarea class="textarea" id="Etexto" placeholder="Ingrese el texto aqui"></textarea>
+                <div class="grupo_botones">
+                    <span>
+                        <i class="bi bi-exclamation-circle-fill"></i>
+                        <p>Solo letras minusculas y sin acentos</p>
+                    </span>
+                    <div class="inputs">
+                        <button type="button" id="btn_encriptar">Encriptar</button>
+                        <button type="button" id="btn_desencriptar">Desencriptar</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="Campo_Salida">
+                <div class="contenedor" id="mi-contenedor">
+                    <span class="textarea_salida"  id="mi-textarea"></span>
+                </div>
+                <div class="input_copy">
+                    <button type="button" class="btn btn-primary" id="input_copy">Copiar <span class="check"><i class="bi bi-check"></i></span></button>
+                </div>
+                <script>
+                        const contenedor = document.getElementById("mi-contenedor");
+                        const textarea = document.getElementById("mi-textarea");
+
+                        textarea.addEventListener("input", () => {
+                        textarea.style.height = "auto";
+                        textarea.style.height = `${textarea.scrollHeight}px`;
+                        contenedor.style.height = `${textarea.scrollHeight}px`;
+                        });
+                </script>
+                <div class="descripcion">
+                    <img src="img/Muñeco.png" alt="img">
+                    <h3>Ningun mensaje fue encontrado</h3>
+                    <p>Ingrese el texto que desees encriptar o desencriptar</p>
+                </div>
+                <div class="logo_copy">
+                    <button type="buttom" id="input_logo_copy"><img title="Copiar" src="img/logo_copy.svg" alt=""></button>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <script src="Script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

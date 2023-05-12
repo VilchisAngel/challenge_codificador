@@ -1,0 +1,333 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter&display=swap');
+
+*{
+    margin: 0;  
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Diseños generales*/
+body, html{
+    width: 100%;
+    height: 100%;
+    font-family: 'Inter', sans-serif;
+}
+
+header .alerta_copy{
+    display: none;
+}
+
+main{
+    width: 90%;
+    height: 100%;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
+header{
+    padding: 1em 0 ;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-content: center;
+    position: relative;
+}
+
+section{
+    display: flex;
+    flex-direction: column;
+    gap: 3em;
+}
+
+button{
+    transition: .2s;
+}
+
+button:hover{
+    cursor: pointer;
+    box-shadow: 0 0 10px #555;
+}
+
+button:active{
+    transform: scale(.9);
+}
+
+/*Diseño del campo de entrada*/
+.Campo_Entrada{
+    position: relative;
+}
+
+.Campo_Entrada .textarea{
+    border: none;
+    width: 100%;
+    padding: 1em 0;
+    outline: none;
+    resize: none;
+    min-height: 300px;
+    font-family: 'inter', sans-serif;
+    color: #0A3871;
+    line-height: 1.5;
+    font-size: 25px;
+}
+
+.Campo_Entrada .textarea::placeholder{
+    color: #0A3871;
+    font-size: 28px;
+    font-family: 'Inter', sans-serif;
+}
+
+.Campo_Entrada .grupo_botones > span{
+    display: flex;
+    gap: .3em;
+    align-content: center;
+    color: #67808E
+}
+
+.Campo_Entrada .grupo_botones .inputs{
+    display: flex;
+    flex-direction: column;
+    gap: .8em;
+}
+
+.Campo_Entrada .grupo_botones .inputs button{
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 24px 0;
+    border-radius: 30px;
+    font-family: 'Inter', sans-serif;
+    background-color: #fff;
+}
+
+.Campo_Entrada .grupo_botones .inputs button:nth-child(1){
+    background-color: #0A3871;
+    color: white;
+}
+
+.Campo_Entrada .grupo_botones .inputs button:nth-child(2){
+    border: 1px solid #0A3871;
+    color: #0A3871;
+}
+
+/*Diseño del Campo de resultado*/
+.Campo_Salida{
+    border-radius: 30px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 0 10px grey;
+}
+
+.Campo_Salida .logo_copy{
+    display: none;
+    visibility: hidden;
+}
+
+.Campo_Salida .textarea_salida{
+    display: block;
+    word-break: break-all;
+    width: 100%;
+    min-height: 150px;
+    padding: 1em;
+    outline: none;
+    resize: none;;
+    border: none;
+    font-family: 'inter', sans-serif;
+    color: #555;
+    line-height: 1.5;
+    font-size: 25px;
+}
+
+.Campo_Salida .input_copy{
+    text-align: center;
+    display: none;
+}
+
+.Campo_Salida .input_copy button{
+    background-color: #fff;
+    border: none;
+    outline: none;
+    color: #0A3871;
+    font-size: 20px;
+    font-weight: 900;
+    font-family: 'inter', sans-serif;
+    display: inline-block;
+    padding: 15px;
+    width: 80%;
+    border: 1px solid #0A3871;
+    border-radius: 30px;
+}
+
+.Campo_Salida .input_copy button .check{
+    display: none;
+}
+
+.Campo_Salida .input_copy button .check i{
+    color: darkgreen;
+}
+
+.Campo_Salida .descripcion{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: grid;
+    text-align: center;
+    place-content: center;
+    font-family: 'inter', sans-serif;
+    padding: 0 1em;
+}
+
+.Campo_Salida .descripcion img{
+    display: none;
+}
+
+.Campo_Salida .descripcion h3{
+    color: black;
+    font-weight: 900;
+}
+.Campo_Salida .descripcion p{
+    color: #495057;
+}
+
+/*Diseño para Tablet */
+@media screen and (min-width: 768px){
+    .Campo_Entrada .grupo_botones .inputs{
+        flex-direction: row;
+        gap: .8em;
+    }
+
+    .Campo_Entrada .grupo_botones .inputs button{
+        padding: 20px;
+    }
+}
+
+/*Diseños para Desktop*/
+@media screen and (min-width: 1024px) {
+    header .alerta_copy{
+        display: none;
+        position: absolute;
+        left: calc(50% - 100px);
+        opacity: 1;
+        animation: alerta .7s linear forwards;        
+    }
+
+    section{
+        height: calc(100% - 100px);
+        flex-direction: row;
+        justify-content: end;
+    }
+
+    .Campo_Entrada{
+        height: 100%;
+        flex-basis: 70%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .Campo_Entrada .textarea{
+        height: 100%;
+    }
+
+    .Campo_Entrada .grupo_botones .inputs{
+        display: flex;
+        flex-direction: row;
+        gap: .8em;
+    }
+
+    .Campo_Salida{
+        border: none;
+        min-height: 100%;
+        width: 350px;
+        overflow-y: scroll;
+        position: relative;
+        padding-top: 1em;
+    }
+
+    .Campo_Salida .textarea_salida{
+        background-color: red;
+    }
+
+    .Campo_Salida .input_copy{
+        display: none;
+        visibility: hidden;
+    }
+
+    .Campo_Salida::-webkit-scrollbar{
+        position: absolute;
+        width: 5px;
+        right: -100px;
+        left: -10px;
+    }
+
+    .Campo_Salida::-webkit-scrollbar-thumb {
+        background: #555;
+        border-radius: 10px;
+    }
+
+    .Campo_Salida::-webkit-scrollbar-thumb:hover {
+        background: #67808E;
+    }
+
+    .Campo_Salida::-webkit-scrollbar-track {
+        border-radius: 5px;
+    }
+
+    .Campo_Salida .textarea_salida{
+        background-color: #fff;
+        height: 100%;
+    }
+
+    .Campo_Salida .descripcion{
+        font-size: .9rem;
+    }
+
+    .Campo_Salida .descripcion img{
+        width: 90%;
+        height: 250px;
+        margin: 0 auto;
+        margin-bottom: 1em;
+        display: block;
+    }
+
+    .Campo_Salida .descripcion h3{
+        font-size: 1.2rem;
+    }
+
+    .Campo_Salida .logo_copy{
+        display: inline-block;
+        position: absolute;
+        top: 5px;
+        left: 20px;
+        border: none;
+        visibility: hidden;
+    }
+
+    .Campo_Salida .logo_copy button{
+        border: none;
+        outline: none;
+        background-color: transparent;;
+    }
+
+    .Campo_Salida .logo_copy button:hover{
+        box-shadow: 0 0 0 #fff;
+    }
+
+    .Campo_Salida .logo_copy button img{
+        transition: .2s;
+    }
+
+    .Campo_Salida .logo_copy button img:hover{
+        filter: drop-shadow(0 0 3px #505357);
+    }
+}
+
+@keyframes alerta{
+    to{
+        opacity: 0;
+    }
+    from{
+        opacity: 1;
+    }
+}
