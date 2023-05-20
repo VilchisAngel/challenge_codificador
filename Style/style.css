@@ -190,6 +190,36 @@ button:active{
     color: #495057;
 }
 
+/*Estilos Extras*/
+#footer{
+    width: 100%;
+}
+  
+.my-datas{
+    font-family: Arial;
+    padding: .6em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .3em;
+    text-align: center;
+    font-size: .8rem;
+}
+  
+.my-datas .line{
+    border-bottom: 2px solid grey;
+    width: 20%;
+}
+
+.my-datas p{
+    margin: 0;
+    padding: 0;
+}
+
+#muñeco{
+    animation: up linear 3s infinite forwards;
+}
+
 /*Diseño para Tablet */
 @media screen and (min-width: 768px){
     .Campo_Entrada .grupo_botones .inputs{
@@ -323,11 +353,24 @@ button:active{
     }
 }
 
+/*Animaciones */
 @keyframes alerta{
     to{
         opacity: 0;
     }
     from{
         opacity: 1;
+    }
+}
+
+@keyframes up{
+    0%{
+        transform: translateY(0);
+    }
+    50%{
+        transform: translateY(-10px);
+    }
+    100%{
+        transform: translateY(0);
     }
 }
