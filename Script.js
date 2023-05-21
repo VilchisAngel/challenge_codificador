@@ -13,7 +13,7 @@ const icon = document.querySelector(".check");
 /*Encripta */
 const Encriptar = (StrEncriptar) => {
 
-    let Diccionario = [["e", "enter"],
+    const Diccionario = [["e", "enter"],
                         ["i", "imes"], 
                         ["a", "ai"],
                         ["o", "ober"],
@@ -73,11 +73,13 @@ function BtnEncriptar() {
 /*Desencripta */
 const DesEncriptar = (StrDesEncriptar) => {
     
-    let Diccionario = [["e", "enter"],
-                        ["i", "imes"], 
+    const Diccionario = [
                         ["a", "ai"],
+                        ["e", "enter"],
+                        ["i", "imes"], 
                         ["o", "ober"],
-                        ["u", "ufat"]];
+                        ["u", "ufat"]
+                        ];
     
         StrDesEncriptar = StrDesEncriptar.toLowerCase();
     
